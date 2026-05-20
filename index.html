@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CP Companion — Competitive Programming Portfolio</title>
+  <meta name="description" content="Showcase your competitive programming achievements across Codeforces, LeetCode & AtCoder in one beautiful portfolio." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ── HEADER ─────────────────────────────────────────────── -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-mark" aria-hidden="true">⚡</div>
+        <div>
+          <div class="logo-name">CP <em>Companion</em></div>
+          <div class="logo-tagline">competitive programming portfolio</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="search-wrap" role="search">
+          <span class="search-icon" aria-hidden="true">@</span>
+          <input
+            id="handleInput"
+            class="search-input"
+            type="text"
+            placeholder="codeforces handle"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Codeforces handle"
+            onkeydown="window.cpApp.handleInputKeydown(event)"
+          />
+          <button id="searchBtn" class="search-btn" onclick="window.cpApp.loadUser()" aria-label="Search">
+            Search
+          </button>
+        </div>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          onclick="window.cpApp.toggleTheme()"
+          aria-label="Toggle theme"
+          title="Toggle light/dark mode"
+        >☀</button>
+      </div>
+    </header>
+
+    <!-- ── PROFILE BANNER ─────────────────────────────────────── -->
+    <div id="profileBar" class="profile-banner" style="display:none" aria-live="polite"></div>
+
+    <!-- ── TABS ──────────────────────────────────────────────── -->
+    <nav class="tab-bar" role="tablist" aria-label="Dashboard sections">
+      <button id="tab-stats"  class="tab active" style="--tab-c:var(--green)"  role="tab" aria-selected="true"  onclick="window.cpApp.switchTab('stats')">
+        <span class="tab-icon">📊</span> Stats
+      </button>
+      <button id="tab-topics" class="tab"         style="--tab-c:var(--blue)"   role="tab" aria-selected="false" onclick="window.cpApp.switchTab('topics')">
+        <span class="tab-icon">🧠</span> Topics
+      </button>
+      <button id="tab-streak" class="tab"         style="--tab-c:var(--amber)"  role="tab" aria-selected="false" onclick="window.cpApp.switchTab('streak')">
+        <span class="tab-icon">🔥</span> Activity
+      </button>
+      <button id="tab-card"   class="tab"         style="--tab-c:var(--rose)"   role="tab" aria-selected="false" onclick="window.cpApp.switchTab('card')">
+        <span class="tab-icon">🎴</span> Share Card
+      </button>
+    </nav>
+
+    <!-- ── TAB CONTENT ───────────────────────────────────────── -->
+    <main>
+      <div id="content-stats"  role="tabpanel" aria-labelledby="tab-stats"></div>
+      <div id="content-topics" role="tabpanel" aria-labelledby="tab-topics"  style="display:none"></div>
+      <div id="content-streak" role="tabpanel" aria-labelledby="tab-streak"  style="display:none"></div>
+      <div id="content-card"   role="tabpanel" aria-labelledby="tab-card"    style="display:none"></div>
+    </main>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────── -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>Built with <span style="color:var(--rose)">♥</span> for the CP community</span>
+        <span class="footer-dot">·</span>
+        <span>Codeforces data via <a href="https://codeforces.com/api/help" target="_blank" rel="noopener">public API</a></span>
+        <span class="footer-dot">·</span>
+        <span>LeetCode &amp; AtCoder data is simulated</span>
+      </div>
+    </footer>
+
+  </div><!-- /#app -->
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
