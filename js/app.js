@@ -6,7 +6,7 @@
 import { fetchCF, mockLC, mockAC, cfRankColor, cfRankLabel, fmt } from './api.js';
 import { drawRatingChart } from './charts.js';
 import {
-  renderStats, renderTopics, renderStreak, renderCard,
+  renderStats, renderTopics, renderStreak, renderCard, renderAbout,
   buildShareCard, CARD_THEMES, setActiveCardTheme,
 } from './tabs.js';
 
@@ -135,7 +135,7 @@ function switchTab(tabId) {
   if (newContent) newContent.style.display = '';
   if (newTab)     { newTab.classList.add('active'); newTab.setAttribute('aria-selected', 'true'); }
 
-  if (state.cf) renderActiveTab();
+  if (state.cf || state.activeTab === 'about') renderActiveTab();
 }
 
 function renderActiveTab() {
@@ -144,6 +144,7 @@ function renderActiveTab() {
   if (tab === 'topics') renderTopics(state);
   if (tab === 'streak') renderStreak(state);
   if (tab === 'card')   renderCard(state);
+  if (tab === 'about')  renderAbout();
 }
 
 /* ── SKELETON / ERROR ─────────────────────────────────────────────────────────── */
