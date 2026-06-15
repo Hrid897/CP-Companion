@@ -67,6 +67,9 @@
       <button id="tab-card"   class="tab"         style="--tab-c:var(--rose)"   role="tab" aria-selected="false" onclick="window.cpApp.switchTab('card')">
         <span class="tab-icon">🎴</span> Share Card
       </button>
+      <button id="tab-about" class="tab"         style="--tab-c:var(--violet)" role="tab" aria-selected="false" onclick="window.cpApp.switchTab('about')">
+        <span class="tab-icon">💡</span> About
+      </button>
     </nav>
 
     <!-- ── TAB CONTENT ───────────────────────────────────────── -->
@@ -75,6 +78,7 @@
       <div id="content-topics" role="tabpanel" aria-labelledby="tab-topics"  style="display:none"></div>
       <div id="content-streak" role="tabpanel" aria-labelledby="tab-streak"  style="display:none"></div>
       <div id="content-card"   role="tabpanel" aria-labelledby="tab-card"    style="display:none"></div>
+      <div id="content-about"  role="tabpanel" aria-labelledby="tab-about"   style="display:none"></div>
     </main>
 
     <!-- ── FOOTER ─────────────────────────────────────────────── -->
